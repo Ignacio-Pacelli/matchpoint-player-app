@@ -12,10 +12,10 @@ target 'matchpoint' do
   pod 'SwiftyJSON'
   pod 'DBProfileViewController'
   pod 'SwiftMessages'
-  pod 'ChatViewController'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
-  
+  pod 'MessageKit'
+
   target 'matchpointTests' do
     inherit! :search_paths
     # Pods for testing

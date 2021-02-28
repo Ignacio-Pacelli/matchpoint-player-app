@@ -1,7 +1,5 @@
 PODS:
   - Alamofire (5.4.0)
-  - ChatViewController (1.2.0):
-    - PlaceholderUITextView
   - DBProfileViewController (2.0.2):
     - FXBlurView (~> 1.6.4)
   - FBSDKCoreKit (9.0.0):
@@ -15,7 +13,11 @@ PODS:
   - FBSDKLoginKit/Login (9.0.0):
     - FBSDKCoreKit (~> 9.0.0)
   - FXBlurView (1.6.4)
-  - PlaceholderUITextView (1.2.0)
+  - InputBarAccessoryView (5.2.3):
+    - InputBarAccessoryView/Core (= 5.2.3)
+  - InputBarAccessoryView/Core (5.2.3)
+  - MessageKit (3.5.0):
+    - InputBarAccessoryView (~> 5.2.1)
   - SideMenu (6.5.0)
   - SwiftMessages (9.0.0):
     - SwiftMessages/App (= 9.0.0)
@@ -24,10 +26,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
-  - ChatViewController
   - DBProfileViewController
   - FBSDKCoreKit
   - FBSDKLoginKit
+  - MessageKit
   - SideMenu
   - SwiftMessages
   - SwiftyJSON
@@ -35,28 +37,28 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - ChatViewController
     - DBProfileViewController
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FXBlurView
-    - PlaceholderUITextView
+    - InputBarAccessoryView
+    - MessageKit
     - SideMenu
     - SwiftMessages
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
-  ChatViewController: fcc9152b22a0099ced7052d842829d6a7ee9e53f
   DBProfileViewController: a2da39408911b0a732ac04512e999468d39f0802
   FBSDKCoreKit: ac6cc500b8e104bb9a4dd20b1527b5d199123c2e
   FBSDKLoginKit: e9b6542fdee322333502ab497f628b011dce7d78
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
-  PlaceholderUITextView: a2158e51dc0a3217ecca2d879bbe59372292d391
+  InputBarAccessoryView: f814a0317d47687fafc6bac9e4df6015eaf5b764
+  MessageKit: fb539583599cd914e8e2d41fe7bdceb4bf686565
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftMessages: 55274ca3a239062398603008ed81924cfd1fe798
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: fe37b87eb8e8d0e000a18b866a99c31606121431
+PODFILE CHECKSUM: 0962a3a47e683744738ffc509e800e30e3433b91
 
 COCOAPODS: 1.10.1

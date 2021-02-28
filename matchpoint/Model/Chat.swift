@@ -8,4 +8,5 @@
 struct Chat: Decodable {
     let id : Int
     let participants: [Player]
+    let lastMessage: MatchpointMessage?
 }

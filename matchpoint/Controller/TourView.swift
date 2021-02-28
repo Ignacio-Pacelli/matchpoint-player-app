@@ -17,7 +17,6 @@ class TourView: UIViewController {
     
     @IBOutlet var imageViewTour: UIImageView!
     @IBOutlet var labelTourName: UILabel!
-    @IBOutlet var labelPlacesCount: UILabel!
     @IBOutlet var labelDays: UILabel!
     @IBOutlet var labelAmount: UILabel!
     @IBOutlet var buttonLikeDislike: UIButton!
@@ -36,21 +35,18 @@ class TourView: UIViewController {
     var club : Club?
     var courts: [Court] = []
     var selectedRow : Int = 0
+   
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        title = club!.name
+//        title = club!.name
         navigationBackgroundImage = navigationController?.navigationBar.backgroundImage(for: .default)
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-                
-        //		tableView1.register(UINib(nibName: "TourCell1", bundle: nil), forCellReuseIdentifier: "TourCell1")
-        //		tableView2.register(UINib(nibName: "TourCell2", bundle: nil), forCellReuseIdentifier: "TourCell2")
         
         imageViewTour.loadPic(club!.picture)
         labelTourName.text = club!.name
-        labelPlacesCount.text = String(courts.count)
         labelDays.text = "Lunes a Domingo"
         labelAmount.text = "desde 5€/h"
         labelRatings.text = "7.5"
@@ -73,14 +69,17 @@ class TourView: UIViewController {
         dateFormatter.dateFormat = "HH:mm:ss"
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         
-        
-        AF.request(url, headers: nil).responseJSON { response in
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+
+        AF.request(url, headers: [authHeaders]).responseJSON { response in
             if let data = response.data {
                 self.courts = try! decoder.decode(Array<Court>.self, from: data)
-                self.tableView2.reloadData {
+                self.tableView2.reloadData()
+                self.tableView2.performBatchUpdates(nil, completion: { (result) in
                     self.constraintTableView1Height.constant = self.tableView1.contentSize.height - 1
                     self.constraintTableView2Height.constant = self.tableView2.contentSize.height
-                }            }
+                })
+            }
         }
         
         
@@ -138,7 +137,6 @@ extension TourView: UITableViewDataSource {
             case 0:
                 cell.bindInfo(title: "Teléfono", subtitle: club!.phone_number)
             case 1:
-                
                 cell.bindInfo(title: club!.location.city, subtitle: club!.location.address)
             default:
                 return cell

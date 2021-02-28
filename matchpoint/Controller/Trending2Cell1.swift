@@ -33,12 +33,18 @@ class Trending2Cell1: UICollectionViewCell {
 //        labelSongs.text = songs
 //    }
     
-    func bindClub(index: Int, club: Club) {
-
-        imageView.loadPic(club.picture)
-        labelType.text = club.location.city
-        labelTitle.text = club.name
-        labelSongs.text = club.location.country
+//    func bindClub(index: Int, club: Club) {
+//
+//        imageView.loadPic(club.picture)
+//        labelType.text = club.location.city
+//        labelTitle.text = club.name
+//        labelSongs.text = club.location.country
+//    }
+    func bindNews(news: News){
+        imageView.loadPic(news.pictureUrl!)
+        labelType.text = news.club.name
+        labelTitle.text = news.title
+        labelSongs.text = news.subtitle
     }
 
     // MARK: - User actions

@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class FriendsTableViewController: UITableViewController {
   
-    var friends: [Friend] = []
+    var friends: [Player] = []
     var club : Club?
     var selectedRow : Int = 0
 
@@ -55,7 +55,7 @@ class FriendsTableViewController: UITableViewController {
     }
     
     func fetchFriends() {
-        AF.request(BASE_URL+FRIENDS_URL).responseDecodable { (response: DataResponse<[Friend], AFError>) in
+        AF.request(BASE_URL+FRIENDS_URL).responseDecodable { (response: DataResponse<[Player], AFError>) in
             self.friends = response.value!
             self.tableView.reloadData()
         }

@@ -17,6 +17,7 @@ import SwiftyJSON
 class Tours1View: UIViewController {
 
     var clubs: [Club] = []
+    var favClubs: [Club] = []
     var selectedRow : Int = 0
 
     @IBOutlet weak var tableView: UITableView!
@@ -27,19 +28,29 @@ class Tours1View: UIViewController {
 		super.viewDidLoad()
 		title = "Clubs"
 
-		navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.fill"), style: .done, target: self, action: #selector(actionProfile)), UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .done, target: self, action: #selector(actionWishlist))]
-
-//		tableView.register(UINib(nibName: "Tours1Cell", bundle: nil), forCellReuseIdentifier: "Tours1Cell")
-
         fetchClubs()
+        fetchFavClubs()
 	}
 
 	// MARK: - Data methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
     
     func fetchClubs() {
-        AF.request(BASE_URL+CLUB_URL).responseDecodable { (response: DataResponse<[Club], AFError>) in
+        clubs.removeAll()
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+
+        AF.request(BASE_URL+CLUB_URL, headers: [authHeaders]).responseDecodable { (response: DataResponse<[Club], AFError>) in
             self.clubs = response.value!
+            self.tableView.reloadData()
+        }
+    }
+    
+    func fetchFavClubs() {
+        favClubs.removeAll()
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+
+        AF.request(BASE_URL+FAVORITES_URL, headers: [authHeaders]).responseDecodable { (response: DataResponse<[Club], AFError>) in
+            self.favClubs = response.value!
             self.tableView.reloadData()
         }
     }
@@ -59,24 +70,6 @@ class Tours1View: UIViewController {
 	// MARK: - User actions
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func actionWishlist() {
-
-		print(#function)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionProfile() {
-
-		print(#function)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionSortBy(_ sender: Any) {
-
-		print(#function)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionFilters(_ sender: Any) {
 
 		print(#function)
 	}
@@ -105,7 +98,7 @@ extension Tours1View: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Tours1Cell", for: indexPath) as! Tours1Cell
-        cell.bindData(index: indexPath.row, club: self.clubs[indexPath.row])
+        cell.bindData(index: indexPath.row, club: self.clubs[indexPath.row], favorites: self.favClubs, tourVC: self)
 		return cell
 	}
     
@@ -125,5 +118,3 @@ extension Tours1View: UITableViewDelegate {
         self.performSegue(withIdentifier: "ClubDetailSegue", sender: nil)
 	}
 }
-
-

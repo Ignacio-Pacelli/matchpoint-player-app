@@ -16,20 +16,11 @@ class TourCell1: UITableViewCell {
 
 	@IBOutlet var labelTitle1: UILabel!
 	@IBOutlet var labelTitle2: UILabel!
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-//	func bindData(data: [String: String]) {
-//
-//		guard let title1 = data["title1"] else { return }
-//		guard let title2 = data["title2"] else { return }
-//
-//		labelTitle1.text = title1
-//		labelTitle2.text = title2
-//	}
+    @IBOutlet weak var imageTitle: UIImageView!
     
     func bindInfo(title: String, subtitle : String){
         labelTitle1.text = title
         labelTitle2.text = subtitle
+       
     }
 }
-

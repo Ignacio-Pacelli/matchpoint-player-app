@@ -11,7 +11,8 @@
 
 import UIKit
 import FBSDKLoginKit
-
+import Alamofire
+import Foundation
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 class LoginViewController: UIViewController {
 
@@ -29,17 +30,46 @@ class LoginViewController: UIViewController {
         loginButton.center = loginButtonView.center
         view.addSubview(loginButton)
         
-        // Observe access token changes
-        // This will trigger after successfully login / logout
-        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
-            // Print out access token
-            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.loadData()
         
-        loadData()
+        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+            if(AccessToken.current?.tokenString != nil){
+                let fbToken = AccessToken.current!.tokenString
+                self.getJwtToken(fbToken: fbToken)
+            }
+            else{
+                let defaults = UserDefaults.standard
+                defaults.setValue(nil, forKey: "facebookToken")
+                defaults.setValue(nil, forKey: "jwtToken")
+                defaults.setValue(nil, forKey: "playerId")
+                defaults.setValue("LOGGED_OUT", forKey: "loginState")
+                defaults.synchronize()
+            }
+        }
     }
 
+    func getJwtToken(fbToken : String){
+    
+        let url : String = BASE_URL+FACEBOOK_LOGIN_URL
+        print("FACEBOOK TOKEN: " + fbToken)
+        let parameters: Parameters = ["authToken": fbToken]
+        Alamofire.AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable { (response: DataResponse<FacebookLoginResponse, AFError>) in
+            
+             print("JWT TOKEN: " + response.value!.token)
+
+            let defaults = UserDefaults.standard
+            defaults.setValue(fbToken, forKey: "facebookToken")
+            defaults.setValue(response.value?.token, forKey: "jwtToken")
+            defaults.setValue(response.value?.player.id, forKey: "playerId")
+            defaults.setValue("LOGGED_IN", forKey: "loginState")
+            defaults.synchronize()
+            
+            self.dismiss(animated: true) {
+            }
+        }
+    }
+
+    
     // MARK: - Data methods
     //---------------------------------------------------------------------------------------------------------------------------------------------
     func loadData() {

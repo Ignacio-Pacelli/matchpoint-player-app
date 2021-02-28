@@ -139,8 +139,9 @@ class ReservationViewController: DayViewController {
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         
         let url : String = BASE_URL+CLUB_URL+clubId+COURT_URL+courtId+BOOKING_URL
-        
-        AF.request(url, headers: nil).responseJSON { response in
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+
+        AF.request(url, headers: [authHeaders]).responseJSON { response in
             if let data = response.data {
                 self.bookings = try! decoder.decode(Array<Booking>.self, from: data)
                 self.reloadData()

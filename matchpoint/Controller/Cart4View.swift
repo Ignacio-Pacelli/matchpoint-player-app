@@ -58,8 +58,9 @@ class Cart4View: UIViewController {
 
         
         let parameters: Parameters = ["startDate": start, "endDate": end, "price": self.totalPrice]
-        
-        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [authHeaders]).responseJSON { response in
             self.dismiss(animated: true) {
                 print("TODO OK!")
                 self.reservationsVC!.fetchBookings()

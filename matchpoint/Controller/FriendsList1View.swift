@@ -17,9 +17,10 @@ import SwiftyJSON
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 class FriendsList1View: UIViewController {
 
-    var friends: [Friend] = []
+    var friends: [Player] = []
     var selectedRow : Int = 0
-    
+    var selectedChat : Chat?
+
     
       @IBOutlet weak var tableView: UITableView!
       @IBOutlet weak var searchBar: UISearchBar!
@@ -43,21 +44,60 @@ class FriendsList1View: UIViewController {
     // MARK: - Data methods
     //---------------------------------------------------------------------------------------------------------------------------------------------
     func fetchFriends() {
-        AF.request(BASE_URL+FRIENDS_URL).responseDecodable { (response: DataResponse<[Friend], AFError>) in
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+        AF.request(BASE_URL+FRIENDS_URL, headers: [authHeaders]).responseDecodable { (response: DataResponse<[Player], AFError>) in
             self.friends = response.value!
             self.tableView.reloadData()
         }
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case "ChatSegueFromFriends":
+            let chatVC = segue.destination as! MatchpointChatViewController
+            chatVC.chat = self.selectedChat
+        default:
+            return
+        }
+    }
     // MARK: - User actions
     //---------------------------------------------------------------------------------------------------------------------------------------------
 
     @objc func actionMore(_ sender: UIButton) {
-
-        print(#function)
+        
+        self.goToChat(forFriend: self.friends[sender.tag])
     }
 
+    func goToChat(forFriend friend : Player) {
+
+        let url : String = BASE_URL+CHAT_URL
+        debugPrint(url)
+        
+        let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+
+        AF.request(url, headers: [authHeaders]).responseJSON { response in
+            if let data = response.data {
+                
+                let chats = try! decoder.decode(Array<Chat>.self, from: data)
+                for chat in chats {
+                    for player in chat.participants {
+                        if player.id == friend.id {
+                            self.selectedChat = chat
+                            self.performSegue(withIdentifier: "ChatSegueFromFriends", sender: nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - Refresh methods
     //---------------------------------------------------------------------------------------------------------------------------------------------
     func refreshTableView() {
@@ -87,7 +127,6 @@ extension FriendsList1View: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsList1Cell", for: indexPath) as! FriendsList1Cell
         cell.bindData(index: indexPath.row, friend: self.friends[indexPath.row])
-        cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
         return cell
     }
 }

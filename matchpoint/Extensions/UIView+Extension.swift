@@ -52,5 +52,11 @@ extension UIView {
         }
     }
     
+    func getUser() -> MatchpointUser{
+        
+        let defaults = UserDefaults.standard
+        return MatchpointUser(facebookToken: defaults.string(forKey: "facebookToken"), jwtToken: defaults.string(forKey: "jwtToken"), loginState: defaults.string(forKey: "loginState"), playerId: defaults.string(forKey: "playerId"))
+    }
+    
     
 }

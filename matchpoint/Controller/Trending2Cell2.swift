@@ -30,9 +30,9 @@ class Trending2Cell2: UICollectionViewCell {
 //        labelArtist.text = artist
 //    }
     
-    func bindFriends(index: Int, friend: Friend) {
+    func bindFriends(index: Int, friend: Player) {
 
-        imageView.sample("Social", "Portraits", index + 10)
+        imageView.loadPic(friend.picture)
         labelTitle.text = friend.name
         labelArtist.text = ""
     }

@@ -17,7 +17,7 @@ class Trending2Cell3: UICollectionViewCell {
     @IBOutlet var labelTitle: UILabel!
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    func bindClub(index: Int, club: Club) {
+    func bindClub(club: Club) {
 
         labelTitle.text = club.name
     }

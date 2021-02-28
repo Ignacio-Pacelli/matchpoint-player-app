@@ -15,13 +15,8 @@ import Alamofire
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 class ProfileViewController: UIViewController {
 
-    @IBOutlet var buttonFollow: UIButton!
     @IBOutlet var imageViewProfile: UIImageView!
     @IBOutlet var labelTitle: UILabel!
-    @IBOutlet var labelCategory: UILabel!
-    @IBOutlet var labelFollowers: UILabel!
-    @IBOutlet var viewRate: UIView!
-    @IBOutlet var labelRate: UILabel!
     @IBOutlet var labelDescription: UILabel!
     @IBOutlet var labelWeightLoss: UILabel!
     @IBOutlet var labelAerobics: UILabel!
@@ -29,7 +24,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var labelZumba: UILabel!
     @IBOutlet var collectionView: UICollectionView!
 
-    private var tranings: [[String: String]] = []
+    
     var clubs: [Club] = []
     var selectedRow : Int = 0
 
@@ -46,7 +41,9 @@ class ProfileViewController: UIViewController {
         fetchClubs()
     }
     func fetchClubs() {
-        AF.request(BASE_URL+CLUB_URL).responseDecodable { (response: DataResponse<[Club], AFError>) in
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.view.getUser().jwtToken!)
+        
+        AF.request(BASE_URL+CLUB_URL, headers: [authHeaders]).responseDecodable { (response: DataResponse<[Club], AFError>) in
             self.clubs = response.value!
             self.collectionView.reloadData()
         }
@@ -74,50 +71,13 @@ class ProfileViewController: UIViewController {
     //---------------------------------------------------------------------------------------------------------------------------------------------
     func loadData() {
 
-        imageViewProfile.sample("Fitness", "ManPower", 25)
-        labelTitle.text = "Dr. Rabufeta"
-        labelCategory.text = ""
-        labelFollowers.text = "23.3K followers"
-        labelRate.text = "4.9"
-        labelDescription.text = "Your study of the moon, like anything else, can go from the simple to the very complex. To gaze at the moon with the naked eye, making."
-        labelWeightLoss.text = "Weight Loss"
-        labelAerobics.text = "Aerobics"
-        labelSlimming.text = "Slimming"
-        labelZumba.text = "Zumba"
-
-        tranings.removeAll()
-
-        var dict1: [String: String] = [:]
-        dict1["title"] = "Push-up"
-        dict1["time"] = "73 hours"
-        dict1["rate"] = "3.1"
-        tranings.append(dict1)
-
-        var dict2: [String: String] = [:]
-        dict2["title"] = "Bent Knee Push-up"
-        dict2["time"] = "70 hours"
-        dict2["rate"] = "4.5"
-        tranings.append(dict2)
-
-        var dict3: [String: String] = [:]
-        dict3["title"] = "Downward-facing Dog"
-        dict3["time"] = "74 hours"
-        dict3["rate"] = "5.0"
-        tranings.append(dict3)
-
-        var dict4: [String: String] = [:]
-        dict4["title"] = "Push-up with Single-leg Raise"
-        dict4["time"] = "61 hours"
-        dict4["rate"] = "4.7"
-        tranings.append(dict4)
-
-        var dict5: [String: String] = [:]
-        dict5["title"] = "Supermans"
-        dict5["time"] = "83 hours"
-        dict5["rate"] = "3.9"
-        tranings.append(dict5)
-
-        refreshCollectionView()
+        imageViewProfile.loadPic("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+        labelTitle.text = "Nacho Pacelli"
+        labelDescription.text = "Mi nombre es Nacho, vivo en Berlin y soy un amante del padel desde hace más de 10 años"
+        labelWeightLoss.text = "Nivel: 4,5"
+        labelAerobics.text = "Posición: Reves"
+        labelSlimming.text = "Mano Hábil: Diestra"
+        labelZumba.text = "Punto fuerte: Pegada"
     }
 
     // MARK: - Refresh methods

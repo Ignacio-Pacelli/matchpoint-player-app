@@ -11,7 +11,7 @@
 
 import UIKit
 import Kingfisher
-
+import Alamofire
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 class Tours1Cell: UITableViewCell {
 
@@ -23,9 +23,13 @@ class Tours1Cell: UITableViewCell {
 	@IBOutlet var labelDays: UILabel!
 	@IBOutlet var labelAmount: UILabel!
     
+    var club: Club!
+    var isFav: Bool = false
+    var tourVC: Tours1View?
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func bindData(index: Int, club: Club) {
-
+    func bindData(index: Int, club: Club, favorites: [Club], tourVC: Tours1View) {
+        self.tourVC = tourVC
+        self.club = club
         imageViewTour.loadPic(club.picture)
 		labelRatings.text = "9.0"
 		labelTourName.text = club.name
@@ -33,13 +37,37 @@ class Tours1Cell: UITableViewCell {
 		labelDays.text = "Lunes a Domingo"
 		labelAmount.text = "desde 5€/h"
         
+        self.isFav = false
+        buttonLikeDislike.tintColor = .lightGray
         
+        if(favorites.count>0){
+            for favClub in favorites {
+                if(favClub.id == club.id){
+                    self.isFav = true
+                    buttonLikeDislike.tintColor = .systemRed
+                    break
+                }
+            }
+        }
 	}
 
 	// MARK: - User actions
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionLikeDislike(_ sender: Any) {
-
-		print(#function)
-	}
+        let url : String = BASE_URL+FAVORITES_URL+String(self.club.id)
+        let authHeaders = HTTPHeader.authorization(bearerToken: self.getUser().jwtToken!)
+        
+        if(self.isFav){
+            AF.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: [authHeaders]).responseJSON { response in
+                print("delete" + String(self.club.id))
+                self.tourVC?.fetchFavClubs()
+            }
+        }
+        else{
+            AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: [authHeaders]).responseJSON { response in
+                print("post" + String(self.club.id))
+                self.tourVC?.fetchFavClubs()
+            }
+        }
+    }
 }

@@ -22,9 +22,9 @@ class FriendsList1Cell: UITableViewCell {
     @IBOutlet weak var buttonMore: UIButton!
     
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    func bindData(index: Int, friend: Friend) {
+    func bindData(index: Int, friend: Player) {
 
-        imageUser.sample("Social", "Portraits", index + 10)
+        imageUser.loadPic(friend.picture)
         labelName.text = friend.name
         labeluserid.text = friend.email
     }

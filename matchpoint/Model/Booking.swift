@@ -12,6 +12,9 @@ struct Booking: Decodable {
     let startDate: Date?
     let endDate: Date?
     let price: Double
+    let club_id: Int
+    let court_id: Int
+
 //    let owner: Player
 
 //    enum CodingKeys: String, CodingKey {

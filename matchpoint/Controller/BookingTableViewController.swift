@@ -58,7 +58,7 @@ class BookingTableViewController: UITableViewController {
         print("selected index %d", indexPath.row)
         selectedRow = indexPath.row
 
-        //self.performSegue(withIdentifier: "BookingSegue", sender: self)
+        self.performSegue(withIdentifier: "SuccessSegue", sender: self)
     }
     
     
