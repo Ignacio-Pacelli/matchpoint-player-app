@@ -7,7 +7,7 @@
 
 import UIKit
 
-let BASE_URL = "http://192.168.178.20:8081"
+let BASE_URL = "http://192.168.178.24:8081"
 //let BASE_URL = "http://ec2-18-198-201-135.eu-central-1.compute.amazonaws.com"
 let CLUB_URL = "/clubs/"
 let FAVORITES_URL = "/favorites/"

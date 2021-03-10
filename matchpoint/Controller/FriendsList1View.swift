@@ -29,14 +29,20 @@ class FriendsList1View: UIViewController {
       private var indexPaths: Set<IndexPath> = []
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
+    @objc func shareApp(){
+        let items = ["Descargate MatchPoint y reserva pistas en tus clubes favoritos! ignaciopacelli.me/download"]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+    }
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
         title = "Amigos"
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.largeTitleDisplayMode = .never
-
-        //tableView.register(UINib(nibName: "FriendsList1Cell", bundle: Bundle.main), forCellReuseIdentifier: "FriendsList1Cell")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Invitar", style: .plain, target: self, action: #selector(shareApp))
 
         fetchFriends()
     }
@@ -50,6 +56,8 @@ class FriendsList1View: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -141,6 +149,7 @@ extension FriendsList1View: UITableViewDelegate {
         print("didSelectItemAt \(indexPath.row)")
         self.selectedRow = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
+        self.goToChat(forFriend: self.friends[indexPath.row])
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------

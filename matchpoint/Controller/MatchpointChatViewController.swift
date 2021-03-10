@@ -16,6 +16,7 @@ class MatchpointChatViewController: MessagesViewController, MessagesDataSource, 
     var messages : [ChatMessage] = []
     var chat: Chat?
     let bgImage = UIImageView()
+    var matchpointMessages : [MatchpointMessage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,10 @@ class MatchpointChatViewController: MessagesViewController, MessagesDataSource, 
         messages.count
     }
     
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        
+        avatarView.loadPic(matchpointMessages[indexPath.section].sender.picture)
+    }
     
     func fetchMessages() {
         
@@ -65,8 +70,8 @@ class MatchpointChatViewController: MessagesViewController, MessagesDataSource, 
 //            }
             
             self.messages.removeAll()
-            let matchpointMessages = response.value!
-            for message in matchpointMessages{
+            self.matchpointMessages = response.value!
+            for message in self.matchpointMessages{
                 
                 let sender = ChatMessageSender(senderId: String(message.sender.id), displayName: message.sender.name)
                 

@@ -3,16 +3,17 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MatchPoint-->
+        <!--MatchPoint Admin-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeAdminViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4nQ-oZ-K4m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +50,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Trending2Cell1" id="Q06-4L-oDG" customClass="Trending2Cell1" customModule="matchpoint" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Trending2Cell1" id="Q06-4L-oDG" customClass="Trending2Cell1" customModule="matchpoint_admin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="19.5" width="413" height="203.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -162,7 +163,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Trending2Cell2" id="bFc-Yx-vGm" customClass="Trending2Cell2" customModule="matchpoint" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Trending2Cell2" id="bFc-Yx-vGm" customClass="Trending2Cell2" customModule="matchpoint_admin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="32.5" width="165" height="194"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -273,7 +274,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Trending2Cell3" id="qZH-QG-WqT" customClass="Trending2Cell3" customModule="matchpoint" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Trending2Cell3" id="qZH-QG-WqT" customClass="Trending2Cell3" customModule="matchpoint_admin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -374,7 +375,7 @@
                             <constraint firstItem="Gmz-S5-PeP" firstAttribute="leading" secondItem="z0R-Ba-tTf" secondAttribute="leading" id="ndW-K0-zrH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MatchPoint" id="zxu-3c-dDN">
+                    <navigationItem key="navigationItem" title="MatchPoint Admin" id="zxu-3c-dDN">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-24" id="TFd-KL-BJ7">
                             <color key="tintColor" systemColor="systemBlueColor"/>
                             <connections>
@@ -403,7 +404,7 @@
         <!--Login View Controller-->
         <scene sceneID="kuP-yh-BFq">
             <objects>
-                <viewController id="MRa-WG-3Zw" customClass="LoginViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MRa-WG-3Zw" customClass="LoginViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="lnF-pr-zg4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -494,7 +495,7 @@
         <!--Article1 View-->
         <scene sceneID="hDK-Ur-3FC">
             <objects>
-                <viewController id="Q1w-g4-a26" customClass="Article1View" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q1w-g4-a26" customClass="Article1View" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="X0M-cZ-ra8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -699,7 +700,7 @@
         <!--Side Menu Table View Controller-->
         <scene sceneID="jg0-mx-8Jr">
             <objects>
-                <tableViewController id="2j7-cv-t7L" customClass="SideMenuTableViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2j7-cv-t7L" customClass="SideMenuTableViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Gdu-rx-297">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -845,6 +846,39 @@
                                             <segue destination="7J4-aF-RAC" kind="show" id="r3D-1t-zYh"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="92" id="lvh-Vd-IwP">
+                                        <rect key="frame" x="0.0" y="465.5" width="414" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lvh-Vd-IwP" id="Fli-hl-hbL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensajes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hht-N0-6Fc">
+                                                    <rect key="frame" x="74" y="33.5" width="78" height="25"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hFh-qH-nPl">
+                                                    <rect key="frame" x="28" y="31.5" width="30" height="29.5"/>
+                                                    <color key="tintColor" systemColor="systemRedColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="6Ot-sD-P10"/>
+                                                        <constraint firstAttribute="height" constant="30" id="iuG-xV-aoL"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hFh-qH-nPl" firstAttribute="centerY" secondItem="Fli-hl-hbL" secondAttribute="centerY" id="A8A-8S-9b6"/>
+                                                <constraint firstItem="hht-N0-6Fc" firstAttribute="leading" secondItem="hFh-qH-nPl" secondAttribute="trailing" constant="16" id="LVS-AG-Mhu"/>
+                                                <constraint firstItem="hht-N0-6Fc" firstAttribute="centerY" secondItem="hFh-qH-nPl" secondAttribute="centerY" id="RNB-wG-lkd"/>
+                                                <constraint firstItem="hFh-qH-nPl" firstAttribute="leading" secondItem="Fli-hl-hbL" secondAttribute="leadingMargin" constant="8" id="TNq-Ke-ecx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yMt-bV-Nhm" kind="show" id="ybU-CB-JEb"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="92" id="16v-fM-c6s">
                                         <rect key="frame" x="0.0" y="557.5" width="414" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -907,7 +941,7 @@
         <!--Profile View Controller-->
         <scene sceneID="vc2-hb-k8L">
             <objects>
-                <viewController id="SQy-17-59q" customClass="ProfileViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SQy-17-59q" customClass="ProfileViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" id="Lgg-ei-DkB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -994,7 +1028,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Profile2Cell" id="yrg-qa-TTY" customClass="Profile2Cell" customModule="matchpoint" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Profile2Cell" id="yrg-qa-TTY" customClass="Profile2Cell" customModule="matchpoint_admin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="4.5" width="156" height="166"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1290,16 +1324,16 @@
         <!--Tours1 View-->
         <scene sceneID="gZj-1L-KoE">
             <objects>
-                <viewController id="aAh-bZ-Z0w" customClass="Tours1View" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aAh-bZ-Z0w" customClass="Tours1View" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="JYt-eR-zbx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMl-9M-bhP">
-                                <rect key="frame" x="0.0" y="18" width="414" height="824"/>
+                                <rect key="frame" x="0.0" y="106" width="414" height="790"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tours1Cell" rowHeight="179" id="NP8-r3-2Nb" customClass="Tours1Cell" customModule="matchpoint" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tours1Cell" rowHeight="179" id="NP8-r3-2Nb" customClass="Tours1Cell" customModule="matchpoint_admin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="179"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NP8-r3-2Nb" id="faj-MZ-wmU">
@@ -1506,7 +1540,7 @@
         <!--Books1 View-->
         <scene sceneID="5aa-r2-qFU">
             <objects>
-                <viewController id="7J4-aF-RAC" customClass="Books1View" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7J4-aF-RAC" customClass="Books1View" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="eo8-z6-USi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1529,7 +1563,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Books1Cell" rowHeight="120" id="Hin-Gu-aYr" customClass="Books1Cell" customModule="matchpoint" customModuleProvider="target">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Books1Cell" rowHeight="120" id="Hin-Gu-aYr" customClass="Books1Cell" customModule="matchpoint_admin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hin-Gu-aYr" id="NIs-7R-uP4">
@@ -1671,7 +1705,7 @@
         <!--Success View-->
         <scene sceneID="4D8-2m-bgg">
             <objects>
-                <viewController id="07u-oX-GcI" customClass="SuccessView" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="07u-oX-GcI" customClass="SuccessView" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Hfm-s1-mT6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1776,7 +1810,7 @@
         <!--Tour View-->
         <scene sceneID="1Kn-lI-Hud">
             <objects>
-                <viewController id="6ke-5g-r3g" customClass="TourView" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6ke-5g-r3g" customClass="TourView" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CKh-TC-ZVO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1971,7 +2005,7 @@
                                                 </constraints>
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TourCell1" rowHeight="65" id="09e-nb-pVQ" customClass="TourCell1" customModule="matchpoint" customModuleProvider="target">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TourCell1" rowHeight="65" id="09e-nb-pVQ" customClass="TourCell1" customModule="matchpoint_admin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="399" height="65"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="09e-nb-pVQ" id="c9E-UG-6VF">
@@ -2070,7 +2104,7 @@
                                                             <constraint firstAttribute="height" constant="138" id="cga-2n-Qxx"/>
                                                         </constraints>
                                                         <prototypes>
-                                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TourCell2" rowHeight="127" id="XNq-Yi-w9k" customClass="TourCell2" customModule="matchpoint" customModuleProvider="target">
+                                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TourCell2" rowHeight="127" id="XNq-Yi-w9k" customClass="TourCell2" customModule="matchpoint_admin" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="399" height="127"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XNq-Yi-w9k" id="wWi-Gj-7iW">
@@ -2222,7 +2256,7 @@
         <!--Reservation View Controller-->
         <scene sceneID="47l-i2-QF8">
             <objects>
-                <viewController id="tUI-pu-ZfQ" customClass="ReservationViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tUI-pu-ZfQ" customClass="ReservationViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X1Y-sB-d2g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2241,7 +2275,7 @@
         <!--Cart4 View-->
         <scene sceneID="Vni-gj-h7o">
             <objects>
-                <viewController id="mab-JM-dAJ" customClass="Cart4View" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mab-JM-dAJ" customClass="Cart4View" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jhl-bl-KFl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2291,7 +2325,7 @@
                                                     <constraint firstAttribute="height" priority="900" constant="160" id="Soe-uv-8AS"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart4Cell1" rowHeight="80" id="EEM-uf-Nad" customClass="Cart4Cell1" customModule="matchpoint" customModuleProvider="target">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart4Cell1" rowHeight="80" id="EEM-uf-Nad" customClass="Cart4Cell1" customModule="matchpoint_admin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EEM-uf-Nad" id="wFc-ZU-aX7">
@@ -2547,17 +2581,17 @@
         <!--Friends List1 View-->
         <scene sceneID="b0n-J3-A5g">
             <objects>
-                <viewController id="4aZ-WL-wRk" customClass="FriendsList1View" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4aZ-WL-wRk" customClass="FriendsList1View" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lO6-v8-Vks">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O0Q-ma-vSv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendsList1Cell" rowHeight="70" id="wis-Ce-4dR" customClass="FriendsList1Cell" customModule="matchpoint" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendsList1Cell" rowHeight="70" id="wis-Ce-4dR" customClass="FriendsList1Cell" customModule="matchpoint_admin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wis-Ce-4dR" id="ZH9-Y4-jWq">
@@ -2597,15 +2631,34 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh9-FM-YII">
+                                                            <rect key="frame" x="344" y="5" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Gh9-FM-YII" secondAttribute="height" id="GXJ-RJ-3Jb"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <imageReference key="image" image="plus.message.fill" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="UgD-Zz-9fQ" firstAttribute="top" secondItem="Atd-Wn-lWg" secondAttribute="top" constant="5" id="AUM-i0-U6c"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Gh9-FM-YII" secondAttribute="bottom" constant="5" id="KpE-dC-Bt8"/>
                                                         <constraint firstItem="BCw-xc-HfZ" firstAttribute="top" secondItem="Atd-Wn-lWg" secondAttribute="top" id="MZ6-WW-9bR"/>
                                                         <constraint firstAttribute="bottom" secondItem="BCw-xc-HfZ" secondAttribute="bottom" id="OiR-9W-i1S"/>
+                                                        <constraint firstItem="Gh9-FM-YII" firstAttribute="top" secondItem="Atd-Wn-lWg" secondAttribute="top" constant="5" id="SBG-cM-YRu"/>
                                                         <constraint firstItem="BCw-xc-HfZ" firstAttribute="leading" secondItem="Atd-Wn-lWg" secondAttribute="leading" id="V1N-i9-ap9"/>
                                                         <constraint firstItem="UgD-Zz-9fQ" firstAttribute="leading" secondItem="BCw-xc-HfZ" secondAttribute="trailing" constant="10" id="aKH-NH-ncb"/>
                                                         <constraint firstAttribute="bottom" secondItem="UgD-Zz-9fQ" secondAttribute="bottom" constant="5" id="an2-CI-GIH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Gh9-FM-YII" secondAttribute="trailing" id="yTO-Cd-thv"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -2620,6 +2673,7 @@
                                         <viewLayoutGuide key="safeArea" id="vJW-rB-1j4"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="buttonMore" destination="Gh9-FM-YII" id="ONH-Ez-wZd"/>
                                             <outlet property="imageUser" destination="BCw-xc-HfZ" id="Lf7-IY-cnv"/>
                                             <outlet property="labelName" destination="EHT-c3-L68" id="4YF-DC-tJY"/>
                                             <outlet property="labeluserid" destination="TfU-FO-JII" id="SSD-mE-ULv"/>
@@ -2654,7 +2708,7 @@
         <!--Chat Table View Controller-->
         <scene sceneID="sEF-74-Aqj">
             <objects>
-                <viewController id="yMt-bV-Nhm" customClass="ChatTableViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yMt-bV-Nhm" customClass="ChatTableViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MrX-zc-ktG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2671,18 +2725,18 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatsCell" id="kBI-ln-w6a" customClass="ChatsCell" customModule="matchpoint" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="159.5"/>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatsCell" id="kBI-ln-w6a" customClass="ChatsCell" customModule="matchpoint_admin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="161"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kBI-ln-w6a" id="QB8-PR-1dH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="159.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCd-nG-4aS">
-                                                            <rect key="frame" x="15" y="10" width="384" height="139.5"/>
+                                                            <rect key="frame" x="15" y="10" width="384" height="141"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P3o-R9-vEo">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="139.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <color key="tintColor" systemColor="systemGrayColor"/>
                                                                     <constraints>
@@ -2695,13 +2749,13 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-J7-FdB">
-                                                                    <rect key="frame" x="149.5" y="5" width="175.5" height="37"/>
+                                                                    <rect key="frame" x="151" y="5" width="174" height="37"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-Ja-S5s">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="175.5" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="174" height="20"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-fg-AEE">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="175.5" height="20"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -2717,7 +2771,7 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD0-XB-RcL">
-                                                                            <rect key="frame" x="0.0" y="20" width="175.5" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="20" width="174" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -2725,7 +2779,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNd-An-64I">
-                                                                    <rect key="frame" x="325" y="0.0" width="59" height="139.5"/>
+                                                                    <rect key="frame" x="325" y="0.0" width="59" height="141"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tpC-aL-tfs">
                                                                             <rect key="frame" x="5" y="2" width="15" height="11.5"/>
@@ -2827,7 +2881,7 @@
         <!--Message View Controller-->
         <scene sceneID="mCp-fN-kXf">
             <objects>
-                <viewController id="iBR-TC-IWX" customClass="MessageViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iBR-TC-IWX" customClass="MessageViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23l-J9-urh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2843,7 +2897,7 @@
         <!--Matchpoint Chat View Controller-->
         <scene sceneID="VjB-9U-tm6">
             <objects>
-                <viewController id="lxS-MX-4vx" customClass="MatchpointChatViewController" customModule="matchpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lxS-MX-4vx" customClass="MatchpointChatViewController" customModule="matchpoint_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NTq-M6-DG9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2858,10 +2912,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wwg-Xw-kpW"/>
-        <segue reference="2yG-Vk-usz"/>
+        <segue reference="hQT-CN-ZNL"/>
+        <segue reference="rqe-5c-s9y"/>
         <segue reference="J7d-1G-jaV"/>
-        <segue reference="1vg-ww-Dzm"/>
+        <segue reference="XNP-T8-Dgk"/>
         <segue reference="GGV-mX-u5G"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2875,10 +2929,12 @@
         <image name="heart.fill" catalog="system" width="32" height="32"/>
         <image name="icons8-menu-24" width="24" height="24"/>
         <image name="login2_facebook.png" width="18" height="18"/>
+        <image name="message" catalog="system" width="32" height="32"/>
         <image name="minus" catalog="system" width="32" height="32"/>
         <image name="person" catalog="system" width="32" height="32"/>
         <image name="person.3" catalog="system" width="32" height="32"/>
         <image name="plus" catalog="system" width="32" height="32"/>
+        <image name="plus.message.fill" catalog="system" width="32" height="32"/>
         <image name="rotate.3d" catalog="system" width="32" height="32"/>
         <image name="sportscourt.fill" catalog="system" width="32" height="32"/>
         <image name="star.circle.fill" catalog="system" width="32" height="32"/>
